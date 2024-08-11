@@ -1,0 +1,19 @@
+.Custom_Carousel .slick-dots {
+    bottom: 10%; /* Điều chỉnh khoảng cách từ đáy carousel */
+    align-items: center;
+}
+
+.Custom_Carousel .slick-dots li button {
+    width: 16px; /* Kích thước của dấu chấm */
+    height: 16px; /* Kích thước của dấu chấm */
+    border-radius: 50%; /* Bo tròn dấu chấm để tạo hình tròn */
+    background: rgb(151, 152, 153); /* Màu nền của dấu chấm không được chọn */
+    font-size: 0; /* Loại bỏ bất kỳ văn bản nào (nếu có) */
+}
+.Custom_Carousel .slick-dots li button::before {
+display: none;
+}
+
+.Custom_Carousel .slick-dots li.slick-active button {
+    background: white; /* Màu nền của dấu chấm đang được chọn */
+}

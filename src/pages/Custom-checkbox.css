@@ -1,0 +1,23 @@
+/* styles.css or a similar file */
+#custom-checkbox {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #4a5568; /* Tailwind's gray-700 */
+    border-radius: 25%; /* Rounded corners for the checkbox */
+    appearance: none; /* Remove default checkbox styling */
+    outline: none; /* Remove default focus outline */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  #custom-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black; /* White color for the tick */
+    font-size: 12px; /* Adjust size of the tick */
+  }
+  
