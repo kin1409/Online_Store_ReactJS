@@ -139,7 +139,7 @@ const Header = () => {
                             listItem.length === 0 ?
                               <>
                                 <div className="h-72 flex flex-col justify-center items-center">
-                                  <img className="w-[130px] h-[130px]" src="../img/box.png" alt="" />
+                                  <img className="w-[130px] h-[130px]" src="./img/box.png" alt="" />
                                   <span>Chưa có sản phẩm nào</span>
                                 </div>
                               </>
@@ -165,7 +165,7 @@ const Header = () => {
                         :
                         <>
                           <div className="h-72 flex flex-col justify-center items-center">
-                            <img className="w-[130px] h-[130px]" src="../img/box.png" alt="" />
+                            <img className="w-[130px] h-[130px]" src="./img/box.png" alt="" />
                             <span>Chưa có sản phẩm nào</span>
                           </div>
                         </>

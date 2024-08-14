@@ -29,12 +29,12 @@ const ArrowR = ({ onClick }) => {
 const Carousel = () => {
     const title = "Level up your style with our summer collections"
     const data = [
-        "../img/1.jpg",
-        "../img/adidas_real.jpg",
-        "../img/6.jpg",
-        "../img/8.jpg",
-        "../img/3.jpg",
-        "../img/9.jpg",
+        "./img/1.jpg",
+        "./img/adidas_real.jpg",
+        "./img/6.jpg",
+        "./img/8.jpg",
+        "./img/3.jpg",
+        "./img/9.jpg",
     ]
     const settings = {
         dots: true,

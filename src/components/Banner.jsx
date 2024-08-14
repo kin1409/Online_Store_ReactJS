@@ -5,7 +5,7 @@ const Banner = () => {
         <div className="md:container m-auto py-10" >
             <div className="flex justify-start h-[400px]">
                 <img
-                    src="img/model_nike_2.jpg"
+                    src=".img/model_nike_2.jpg"
                     alt=""
                     className="w-1/2 h-full object-cover rounded-s-lg"
                 />

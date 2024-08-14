@@ -7,7 +7,7 @@ const Footer = () => {
         {/* deprision */}
         <div className="flex  pt-10 justify-between">
           <div className=" w-[600px] items-start">
-            <img src="../img/logo.png" className="h-20 w-20 " alt="" />
+            <img src="./img/logo.png" className="h-20 w-20 " alt="" />
             <p className=" max-w-[500px] pl-4 pr-4 text-gray-400 text-lg ">
               Specializes in providing high-quality,stylish products for your
               wardrobe
@@ -63,13 +63,13 @@ const Footer = () => {
               Payment Methods
             </h6>
             <div className="flex justify-between gap-8">
-              <img className="h-10 w-10" src="../img/visa_icon.svg" alt="" />
+              <img className="h-10 w-10" src="./img/visa_icon.svg" alt="" />
               <img
                 className="h-10 w-10"
                 src="../img/mastercard_icon.svg"
                 alt=""
               />
-              <img className="h-10 w-10" src="../img/paypal_icon.svg" alt="" />
+              <img className="h-10 w-10" src="./img/paypal_icon.svg" alt="" />
             </div>
           </div>
         </div>

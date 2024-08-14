@@ -6,30 +6,30 @@ import Subscribe from "../components/Subscribe";
 import useFetch from "../hooks/useFetch";
 
 const image_brands = [
-  "../img/nike.png",
-  "../img/gucci.png",
-  "../img/lv.png",
-  "../img/puma.png",
-  "../img/chanel.png",
-  "../img/levi.png",
-  "../img/adidas.png",
-  "../img/ck.png",
+  "./img/nike.png",
+  "./img/gucci.png",
+  "./img/lv.png",
+  "./img/puma.png",
+  "./img/chanel.png",
+  "./img/levi.png",
+  "./img/adidas.png",
+  "./img/ck.png",
 ];
 const image_Currated = [
   {
-    image: "img/8.jpg",
+    image: ".img/8.jpg",
     title: "Best Seller"
   },
   {
-    image: "img/5.jpg",
+    image: ".img/5.jpg",
     title: "Shop Men"
   },
   {
-    image: "img/3.jpg",
+    image: ".img/3.jpg",
     title: "Shop Women"
   },
   {
-    image: "img/4.jpg",
+    image: ".img/4.jpg",
     title: "Shop Kid"
   },
 

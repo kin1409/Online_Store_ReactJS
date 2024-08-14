@@ -15,7 +15,7 @@ const Subscribe = () => {
                     <input
                         type="email"
                         placeholder="Enter your email"
-                        className="pl-7 outline-gray-400 bg-[url('/img/search.svg')] bg-no-repeat bg-[length:25px] bg-[5px_15px] py-2 w-full border-2 rounded-lg"
+                        className="pl-7 outline-gray-400 bg-[url('./img/search.svg')] bg-no-repeat bg-[length:25px] bg-[5px_15px] py-2 w-full border-2 rounded-lg"
                     />
                     <button className="bg-slate-900 text-white py-3 px-5 rounded-lg border-2 border-slate-900 hover:border-red-500 transition duration-500">
                         Subscribe
