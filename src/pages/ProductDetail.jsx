@@ -50,8 +50,8 @@ const ProductDetail = () => {
     const IMG = [
         data ? data.image : null,
         "./img/2.jpg",
-        "./img/3.jpg",
-        "./img/4.jpg",
+        "../img/3.jpg",
+        "/img/4.jpg",
     ]
 
     const starRating = () => {

@@ -79,8 +79,12 @@ const Header = () => {
         {/* <!-- nav --> */}
         <nav className={`md:container m-auto flex justify-between transition-all duration-500 ease-in-out ${isScrolled ? `bg-gray-200` : `bg-white`}`}>
           {/* <!-- logo --> */}
-          <div className="h-24 w-24">
-            <Link to="/Online_Store_ReactJS/" onClick={handleToogleTrue} ><img src="./img/logo.png" alt="" /></Link>
+          <div className="h-24 w-24 flex items-center justify-center">
+            <Link to="/Online_Store_ReactJS/" onClick={handleToogleTrue} >
+              <div className="rounded-full border-[3px] border-black">
+                <img className="h-16 w-16 text-black p-2" src="./img/logo_v3.png" alt="" />
+              </div>
+            </Link>
 
           </div>
           {/* <!-- list --> */}
