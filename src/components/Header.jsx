@@ -128,10 +128,12 @@ const Header = () => {
             </div>
             {/* cart */}
             <div className="w-10 group relative h-full flex items-center justify-center">
-              <div className={`${length === 0 ? `invisible opacity-0 scale-75` : `visible opacity-100 scale-100`} absolute z-[2] select-none rounded-full w-5 h-5 bg-red-500 flex justify-center items-center top-6 right-0 transition-all duration-300 ease-in-out`}>
-                <span className="animate-spin-slow absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                <span className=" text-xs" >{length <= 9 ? length : "+9"}</span>
-              </div>
+              {isAuthenticated &&
+                <div className={`${length === 0 ? `invisible opacity-0 scale-75` : `visible opacity-100 scale-100`} absolute z-[2] select-none rounded-full w-5 h-5 bg-red-500 flex justify-center items-center top-6 right-0 transition-all duration-300 ease-in-out`}>
+                  <span className="animate-spin-slow absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className=" text-xs" >{length <= 9 ? length : "+9"}</span>
+                </div>
+              }
               <i className="fa-solid fa-cart-arrow-down fa-flip-horizontal relative"></i>
               <div className="max-h-96 rounded-md absolute p-2 space-y-3 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-500 transform scale-75 group-hover:scale-100 origin-top-right z-10 group-hover:z-50 bg-white border-2 border-gray-200 w-[600px] text-black top-20 -right-10">
                 <div className="relative z-20">
