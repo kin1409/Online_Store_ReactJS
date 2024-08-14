@@ -35,28 +35,28 @@ const AdminLayout = () => (
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Online_Store_ReactJS/",
     element: <MainLayout />,
     errorElement: <Error />,
     children: [
-      { path: "/", element: <Home /> },
-      { path: "/men", element: <Men /> },
-      { path: "/women", element: <Women /> },
-      { path: "/kid", element: <Kid /> },
-      { path: "/search", element: <Search /> },
-      { path: "/checkout", element: <Checkout /> },
-      { path: "/detail/:id", element: <ProductDetail /> },
+      { path: "/Online_Store_ReactJS/", element: <Home /> },
+      { path: "/Online_Store_ReactJS/men", element: <Men /> },
+      { path: "/Online_Store_ReactJS/women", element: <Women /> },
+      { path: "/Online_Store_ReactJS/kid", element: <Kid /> },
+      { path: "/Online_Store_ReactJS/search", element: <Search /> },
+      { path: "/Online_Store_ReactJS/checkout", element: <Checkout /> },
+      { path: "/Online_Store_ReactJS/detail/:id", element: <ProductDetail /> },
 
     ],
   },
-  { path: "/login", element: <Login /> },
+  { path: "/Online_Store_ReactJS/login", element: <Login /> },
   {
-    path: "/admin", element: <AdminLayout />,
+    path: "/Online_Store_ReactJS/admin", element: <AdminLayout />,
     children: [
       { index: true, element: <Navigate to="products" /> },
-      { path: "users", element: <Users />, index: true, },
-      { path: "carts", element: <Carts /> },
-      { path: 'products', element: <Products /> }
+      { path: "/Online_Store_ReactJS/admin/users", element: <Users />, index: true, },
+      { path: "/Online_Store_ReactJS/admin/carts", element: <Carts /> },
+      { path: '/Online_Store_ReactJS/admin/products', element: <Products /> }
     ]
   },
   { path: "*", element: <Error /> }
