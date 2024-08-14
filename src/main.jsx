@@ -8,9 +8,9 @@ import store from './app/indexx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider store={store}>
-    <React.StrictMode>
+    <React.Suspense>
       <App />
-    </React.StrictMode>
+    </React.Suspense>
   </Provider >
 
 

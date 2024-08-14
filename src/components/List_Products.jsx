@@ -118,7 +118,7 @@ const List_Products = ({ searchItem, keyword, loading }) => {
                     </div>
                 </div>
             </div>
-            <div className='mx-4 flex gap-2 flex-wrap items-center'>
+            <div className='mx-4 flex gap-2 flex-wrap items-center invisible'>
                 <h2 className='inline'>Applied Filters:</h2>
                 <span className='border border-gray-400 rounded-full px-4 py-1 inline-block' >
                     Tops

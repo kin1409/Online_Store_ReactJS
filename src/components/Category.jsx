@@ -60,11 +60,11 @@ const category = ({ data }) => {
                     return (
                         <div key={subMenuPath}>
                             <div
-                                className="p-2 cursor-pointer"
+                                className="p-2 cursor-pointer flex justify-between items-center"
                                 onClick={() => toggleMenu(subMenuPath)}
                             >
-                                {subMenu.name}
-                                <span className={`ml-2 ${menuStates[subMenuPath] ? 'rotate-180' : ''}`}>▼</span>
+                                <span className='text-lg'> {subMenu.name}</span>
+                                <i className={`fa-solid fa-chevron-right ml-2 ${menuStates[subMenuPath] ? 'rotate-90' : ''} transition-all duration-300 ease-in-out`}></i>
 
                             </div>
                             {menuStates[subMenuPath] && subMenu.sub_check && (
@@ -100,19 +100,18 @@ const category = ({ data }) => {
         )
     }
 
-    console.log("render")
     return (
         <div className='block border-2 border-gray-200 shadow-md rounded-md mt-2'>
             {dataCategory.map((menu, index) => (
                 <div className='flex flex-col justify-center items-center'
                     key={index}>
                     <div
-                        className=" p-4 pl-6 w-full cursor-pointer mt-2"
+                        className=" p-4 pl-6 w-full cursor-pointer mt-2 flex justify-between items-center"
                         onClick={() => toggleMenu(index.toString())}
                     >
-                        {menu.name}
+                        <span className='text-xl'>{menu.name}</span>
                         {(menu.submenu || menu.sub_check) && (
-                            <span className={`ml-2 ${menuStates[index] ? 'rotate-180' : ''}`}>▼</span>
+                            <i className={`fa-solid fa-chevron-right ml-2 ${menuStates[index] ? 'rotate-90' : ''} transition-all duration-300 ease-in-out`}></i>
                         )}
                     </div>
                     {menuStates[index] && menu.submenu && (

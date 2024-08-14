@@ -1,26 +1,25 @@
 import React, { useState } from 'react'
 import Users from '../components/Users'
+import { Link, Outlet, useLocation, } from 'react-router-dom'
 
 const Admin = () => {
-    const [isSelected, setIsSelected] = useState("User")
+    const [isSelected, setIsSelected] = useState("Products")
+    const location = useLocation()
 
     const MENU = [
         {
-            title: "User",
+            title: "Products",
+            icon: "fa-solid fa-users"
+        },
+        {
+            title: "Users",
             icon: "fa-solid fa-users"
         },
         {
             title: "Carts",
             icon: "fa-solid fa-users"
         },
-        {
-            title: "Products",
-            icon: "fa-solid fa-users"
-        },
-        {
-            title: "Dashboard",
-            icon: "fa-solid fa-users"
-        },
+
     ]
     console.log(MENU[0].icon)
     const handleSelected = (name) => {
@@ -34,16 +33,17 @@ const Admin = () => {
                         <div onClick={() => handleSelected(item.title)}
                             key={index}
                             className={`w-full ${isSelected === item.title ? `bg-white shadow-md shadow-black` : `bg-gray-200`} rounded-xl cursor-pointer`}>
-                            <div className='p-2 flex gap-5 items-center'>
+                            <Link to={`/admin/${item.title.toLowerCase()}`}
+                                className='p-2 flex gap-5 items-center'>
                                 <i className={`${item.icon}`}></i>
                                 <span className='text-xl'>{item.title}</span>
-                            </div>
+                            </Link>
                         </div>
                     );
                 })}
             </div>
             <div className='pt-32  w-full ml-96 mr-16'>
-                <Users />
+                <Outlet />
             </div>
         </div >
     )

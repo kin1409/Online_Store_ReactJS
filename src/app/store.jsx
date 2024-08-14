@@ -1,5 +1,3 @@
-
-
 // Actions
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
@@ -71,11 +69,9 @@ const cartReducer = (state = initialCartState, action) => {
             }
         case DELETE_ITEM_CART:
             {
-                const existingItemIndex = state.listItem.findIndex(cartItem => cartItem.id === action.id);
-                if (existingItemIndex !== -1) {
-                    const total = parseFloat((state.Total - (state.listItem[existingItemIndex].price * state.listItem[existingItemIndex].quantity)).toFixed(2))
-                    return { ...state, listItem: state.listItem.filter(item => item.id !== action.id), Total: total, length: state.length - 1 }
-                }
+                const ItemIndex = state.listItem.findIndex(cartItem => cartItem.id === action.id);
+                const total = parseFloat((state.Total - (state.listItem[ItemIndex].price * state.listItem[ItemIndex].quantity)).toFixed(2))
+                return { ...state, listItem: state.listItem.filter(item => item.id !== action.id), Total: total, length: state.length - 1 }
             }
 
         default:

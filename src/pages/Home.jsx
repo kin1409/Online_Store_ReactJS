@@ -53,7 +53,7 @@ const Home = () => {
       <Carousel />
       {/* <!-- brands --> */}
       <div className="md:container m-auto flex flex-col py-5">
-        <h2 className="text-2xl mt-10">Brands</h2>
+        <h2 className="text-4xl font-medium mt-10">Brands</h2>
         <div className="flex justify-around mt-10">
           {image_brands.map((s, index) => (
             <div className="w-14 h-14" key={index}>

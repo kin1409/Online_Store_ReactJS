@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { loginApi } from "../services/UserService";
+import { loginApi } from "../services/Service";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from '../app/store';
 
@@ -31,31 +31,31 @@ const Login = () => {
 
 
   const handleLogin = async () => {
-    setError("")
     setLoading(true)
     if (!username || !password)
       return handleNullInPut()
     try {
       let response = await loginApi(username, password)
       if (response && response.data) {
-        // localStorage.setItem("token", response.data.token)
         dispatch(login(response.data))
         navigate("/")
       }
     } catch (error) {
       setError(error.response.data)
+    } finally {
+      setLoading(false)
     }
-    setLoading(false)
+
   }
 
 
   return (
     <div
-      className="bg-gradient-to-r from-white to-blue-300
+      className="bg-gray-300
     flex items-center justify-center h-screen"
     >
       <div
-        className=" bg-white rounded-lg shadow-slate-950 relative overflow-hidden w-[768px] max-w-full min-h-[600px]"
+        className=" bg-white border-2 rounded-lg shadow-slate-950 relative overflow-hidden w-[768px] max-w-full min-h-[600px]"
         id="container"
       >
         {/* Register */}
@@ -97,22 +97,22 @@ const Login = () => {
               or use your email for registeration
             </span>
             <input
-              className="bg-gray-400 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
+              className="bg-gray-200 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
               type="text"
               placeholder="Name"
             />
             <input
-              className="bg-gray-400 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
+              className="bg-gray-200 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
               type="email"
               placeholder="Email"
             />
             <input
-              className="bg-gray-400 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
+              className="bg-gray-200 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
               type="password"
               placeholder="Password"
             />
-            <Link to="/Most" >
-              <button className="bg-indigo-500 text-white text-xs py-3 px-10 border border-transparent rounded-xl uppercase mt-3 cursor-pointer">
+            <Link to="" >
+              <button className="bg-gray-600 text-white text-xs py-3 px-10 border border-transparent rounded-xl uppercase mt-3 cursor-pointer">
                 Sign Up
 
               </button>
@@ -124,7 +124,7 @@ const Login = () => {
           className={`absolute top-0 h-full transition-all duration-1000 ease-in-out left-0 w-1/2 ${move ? `translate-x-full z-[2]  ` : ` z-0`
             }`}
         >
-          <div className="bg-white flex flex-col justify-center items-center px-10 h-full">
+          <div className="bg-gray-3 flex flex-col justify-center items-center px-10 h-full">
             <h1 className="text-3xl font-semibold">Sign In</h1>
             <div className="my-5">
               <a
@@ -156,14 +156,14 @@ const Login = () => {
               or use your email password
             </span>
             <input
-              className="bg-gray-400 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
+              className="bg-gray-200 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
               type="text"
               placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
             />
 
             <input
-              className="bg-gray-400 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
+              className="bg-gray-200 placeholder-gray-700 outline-none my-2 py-3 px-4 text-sm rounded-lg w-full"
               type="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
@@ -176,7 +176,7 @@ const Login = () => {
             <a href="#" className="my-2">
               Forget Your Password?
             </a>
-            <button onClick={() => handleLogin()} className="bg-indigo-500 text-white text-xs py-3 px-10 border border-transparent rounded-xl uppercase mt-3 cursor-pointer">
+            <button onClick={() => handleLogin()} className="bg-gray-600 text-white text-xs py-3 px-10 border border-transparent rounded-xl uppercase mt-3 cursor-pointer">
               {loading ? <i class="fas fa-circle-notch fa-spin"></i> : "Sign In"}
 
             </button>
@@ -184,12 +184,12 @@ const Login = () => {
         </div>
         {/* move_s */}
         <div
-          className={`absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-all duration-1000 ease-in-out z-50
+          className={`absolute bg-red-500 top-0 left-1/2 w-1/2 h-full overflow-hidden transition-all duration-1000 ease-in-out z-50
            ${move ? `-translate-x-full rounded-e-[150px]` : `rounded-s-[150px]`
             }`}
         >
           <div
-            className={`bg-purple-600 h-full bg-gradient-to-r from-purple-500 to-purple-700 text-white relative -left-full w-[200%] transition-all duration-500 ease-in-out ${move ? "translate-x-1/2" : "translate-x-0"
+            className={`bg-gray-600 h-full  text-white relative -left-full w-[200%] transition-all duration-500 ease-in-out ${move ? "translate-x-1/2" : "translate-x-0"
               }`}
           >
             {/* Login move */}

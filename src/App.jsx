@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
+import { createBrowserRouter, Navigate, Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
 import Home from './pages/Home';
 import Men from './pages/Men';
 import Women from './pages/Women';
@@ -12,8 +12,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Checkout from './pages/Checkout';
 import ProductDetail from './pages/ProductDetail';
+import Users from './components/Users';
+import Carts from './components/Carts';
+import Products from './components/Products';
 
-const AppLayout = () => (
+const MainLayout = () => (
   <>
     <Header />
     <ScrollRestoration />
@@ -22,7 +25,7 @@ const AppLayout = () => (
   </>
 );
 
-const AppLayout2 = () => (
+const AdminLayout = () => (
   <>
     <Header />
     <Admin />
@@ -33,7 +36,7 @@ const AppLayout2 = () => (
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <MainLayout />,
     errorElement: <Error />,
     children: [
       { path: "/", element: <Home /> },
@@ -47,7 +50,15 @@ const router = createBrowserRouter([
     ],
   },
   { path: "/login", element: <Login /> },
-  { path: "/admin", element: <AppLayout2 /> },
+  {
+    path: "/admin", element: <AdminLayout />,
+    children: [
+      { index: true, element: <Navigate to="products" /> },
+      { path: "users", element: <Users />, index: true, },
+      { path: "carts", element: <Carts /> },
+      { path: 'products', element: <Products /> }
+    ]
+  },
   { path: "*", element: <Error /> }
 ]);
 
