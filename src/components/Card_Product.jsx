@@ -15,7 +15,7 @@ const Card_Product = ({ item }) => {
             dispatch(setCart({ id: item.id, title: item.title, image: item.image, price: item.price, quantity: quantity }))
         }
         else {
-            navigate("/login")
+            navigate("/Online_Store_ReactJS/login")
         }
 
     }
@@ -25,7 +25,7 @@ const Card_Product = ({ item }) => {
         <div className=" flex flex-col justify-center  w-full pt-2 cursor-pointer "
         >
             <div className='transition-all duration-700 ease-in-out hover:-translate-y-2'>
-                <Link to={`/detail/${item.id}`}
+                <Link to={`/Online_Store_ReactJS/detail/${item.id}`}
                 >
                     <div className="h-[450px] flex justify-center border border-gray-300 rounded-lg">
                         <img
@@ -36,7 +36,7 @@ const Card_Product = ({ item }) => {
                     </div>
                 </Link>
                 <div className="flex justify-between mt-3 px-2 py-1 gap-2">
-                    <Link to={`/detail/${item.id}`}>
+                    <Link to={`/Online_Store_ReactJS/detail/${item.id}`}>
                         <div>
                             <h3 className="text-base line-clamp-1">{item.title}</h3>
                             <span className="text-2xl font-bold">${item.price}</span>

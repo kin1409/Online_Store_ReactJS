@@ -33,7 +33,7 @@ const Admin = () => {
                         <div onClick={() => handleSelected(item.title)}
                             key={index}
                             className={`w-full ${isSelected === item.title ? `bg-white shadow-md shadow-black` : `bg-gray-200`} rounded-xl cursor-pointer`}>
-                            <Link to={`/admin/${item.title.toLowerCase()}`}
+                            <Link to={`/Online_Store_ReactJS/admin/${item.title.toLowerCase()}`}
                                 className='p-2 flex gap-5 items-center'>
                                 <i className={`${item.icon}`}></i>
                                 <span className='text-xl'>{item.title}</span>

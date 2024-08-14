@@ -88,7 +88,7 @@ const ProductDetail = () => {
 
     const handleAddCart = () => {
         if (!isAuthenticated)
-            navigate("/login")
+            navigate("/Online_Store_ReactJS/login")
         else {
             dispatch(setCart({ id: data.id, title: data.title, image: data.image, price: data.price, quantity: nums }))
         }

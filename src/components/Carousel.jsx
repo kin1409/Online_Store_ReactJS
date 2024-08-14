@@ -58,7 +58,7 @@ const Carousel = () => {
                     {title}
                 </h1>
                 <Link
-                    to="/Men"
+                    to="/Online_Store_ReactJS/men"
                     className="top-32 z-10 bg-white rounded-md p-2 border-2 hover:border-red-500 transition duration-1000 ease-in-out"
                 >
                     Shop now

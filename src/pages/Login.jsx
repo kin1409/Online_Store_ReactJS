@@ -15,7 +15,7 @@ const Login = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     if (isAuthenticated)
-      navigate("/")
+      navigate("/Online_Store_ReactJS/")
   }, [])
 
 
@@ -38,7 +38,7 @@ const Login = () => {
       let response = await loginApi(username, password)
       if (response && response.data) {
         dispatch(login(response.data))
-        navigate("/")
+        navigate("/Online_Store_ReactJS/")
       }
     } catch (error) {
       setError(error.response.data)

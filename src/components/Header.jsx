@@ -43,7 +43,7 @@ const Header = () => {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      navigate(`/search?keyword=${encodeURIComponent(inputValue)}`);
+      navigate(`/Online_Store_ReactJS/search?keyword=${encodeURIComponent(inputValue)}`);
       console.log(encodeURIComponent(inputValue))
       event.target.value = ""
     }
@@ -51,7 +51,7 @@ const Header = () => {
 
   const handleLogout = () => {
     dispatch(logout())
-    navigate("/")
+    navigate("/Online_Store_ReactJS/")
   }
 
   return (
@@ -63,8 +63,7 @@ const Header = () => {
             <div className="text-center flex justify-center bg-black text-white relative text-xs">
               <span className="pb-1 pt-1">
                 Sign up and GET 20% OFF for your first order.
-                <Link to="/login" className="underline">
-                  {" "}
+                <Link to="/Online_Store_ReactJS/login" className="underline">
                   Sign up now.
                 </Link>
               </span>
@@ -81,7 +80,7 @@ const Header = () => {
         <nav className={`md:container m-auto flex justify-between transition-all duration-500 ease-in-out ${isScrolled ? `bg-gray-200` : `bg-white`}`}>
           {/* <!-- logo --> */}
           <div className="h-24 w-24">
-            <Link to="/" onClick={handleToogleTrue} ><img src="../img/logo.png" alt="" /></Link>
+            <Link to="/Online_Store_ReactJS/" onClick={handleToogleTrue} ><img src="./img/logo.png" alt="" /></Link>
 
           </div>
           {/* <!-- list --> */}
@@ -90,7 +89,7 @@ const Header = () => {
               Shop <i className="fa-solid fa-chevron-down"></i>
               <ul className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-700 transform scale-75 group-hover:scale-100 z-50 group-hover:z-50 bg-white border-2 border-gray-200 w-28 text-black">
                 <li className="p-2 hover:text-red-400 transition duration-500 ease-in-out">
-                  <Link to="/men">Men</Link>
+                  <Link to="/Online_Store_ReactJS/men">Men</Link>
                 </li>
                 <li className="p-2 hover:text-red-400 transition duration-500 ease-in-out">
                   Women
@@ -158,7 +157,7 @@ const Header = () => {
                                 </li>
                                 <li className="flex justify-between mt-2">
                                   <span className='text-xl font-semibold flex'>Total: ${Total}</span>
-                                  <Link to="/checkout" className='bg-blue-500 p-2 ml-2 rounded-md hover:bg-blue-700'>Checkout</Link>
+                                  <Link to="/Online_Store_ReactJS/checkout" className='bg-blue-500 p-2 ml-2 rounded-md hover:bg-blue-700'>Checkout</Link>
                                 </li>
                               </>
                           }
@@ -185,11 +184,11 @@ const Header = () => {
                 <li className="p-2 hover:text-red-400 transition duration-500 ease-in">
                   {isAuthenticated ?
                     <>
-                      <Link to="/admin">Admin</Link>
+                      <Link to="/Online_Store_ReactJS/admin">Admin</Link>
                     </>
                     :
                     <>
-                      <Link to="/login">Login</Link>
+                      <Link to="/Online_Store_ReactJS/login">Login</Link>
                     </>
                   }
                 </li>
