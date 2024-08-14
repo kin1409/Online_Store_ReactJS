@@ -17,19 +17,19 @@ const image_brands = [
 ];
 const image_Currated = [
   {
-    image: ".img/8.jpg",
+    image: "./img/8.jpg",
     title: "Best Seller"
   },
   {
-    image: ".img/5.jpg",
+    image: "./img/5.jpg",
     title: "Shop Men"
   },
   {
-    image: ".img/3.jpg",
+    image: "./img/3.jpg",
     title: "Shop Women"
   },
   {
-    image: ".img/4.jpg",
+    image: "./img/4.jpg",
     title: "Shop Kid"
   },
 

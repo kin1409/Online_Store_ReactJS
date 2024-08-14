@@ -66,7 +66,7 @@ const Footer = () => {
               <img className="h-10 w-10" src="./img/visa_icon.svg" alt="" />
               <img
                 className="h-10 w-10"
-                src="../img/mastercard_icon.svg"
+                src="./img/mastercard_icon.svg"
                 alt=""
               />
               <img className="h-10 w-10" src="./img/paypal_icon.svg" alt="" />
