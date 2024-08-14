@@ -13,6 +13,10 @@ const Carts = () => {
     const [dataD, setDataD] = useState(null);
     const [Total, setTotal] = useState(0)
     const [id, setID] = useState()
+    const [data2, setData2] = useState()
+    useEffect(() => {
+        setData2(data)
+    }, [data])
     useEffect(() => {
         if (!dialogDelete) {
             if (dataD != null) {
@@ -26,6 +30,10 @@ const Carts = () => {
                 }, 5000);
         }
     }, [dataD || errorD])
+
+    const handleSearch = (value) => {
+        setData2(data.filter(item => item.userId === parseInt(value)))
+    }
 
     const handleDate = (itemdate) => {
         const date = new Date(itemdate);
@@ -102,7 +110,8 @@ const Carts = () => {
                     <input
                         className="pl-8 p-1 md:h-10 md:w-60 rounded-md border-2 bg-gray-100 border-gray-200 focus:border-gray-400 focus:outline-none"
                         type="text"
-                        placeholder="Search by ID..."
+                        placeholder="Search by UserId..."
+                        onChange={(e) => handleSearch(e.target.value)}
                     />
                 </div>
             </div>
@@ -127,7 +136,7 @@ const Carts = () => {
                         :
                         <>
 
-                            {data.map((item) => {
+                            {data2.map((item) => {
                                 return (
                                     <tr className='border-t border-b' key={item.id}>
                                         <td className='py-10 text-lg'>{item.id}</td>

@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex  pt-10 justify-between">
           <div className=" w-[600px] items-start">
             <div className="rounded-full border-[3px] border-black h-20 w-20 flex justify-center items-center">
-              <img className="h-16 w-16 text-black p-2" src="/img/logo_v3.png" alt="" />
+              <img className="h-16 w-16 text-black p-2" src="./img/logo_v3.png" alt="" />
             </div>
             <p className=" max-w-[500px] pl-4 pr-4 text-gray-400 text-lg mt-5 ">
               Specializes in providing high-quality,stylish products for your

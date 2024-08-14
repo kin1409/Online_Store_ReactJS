@@ -24,6 +24,10 @@ const Products = () => {
     const [id, setID] = useState()
     const [item, setItem] = useState()
     const [nullInput, setNullInput] = useState()
+    const [data2, setData2] = useState()
+    useEffect(() => {
+        setData2(data)
+    }, [data])
     useEffect(() => {
         if (!dialogDelete) {
             if (dataD != null) {
@@ -60,6 +64,12 @@ const Products = () => {
         }
     }, [dataD || errorD || dataA || errorA || dataU || errorU])
 
+
+
+
+    const handleSearch = (value) => {
+        setData2(data.filter(item => item.title.includes(value)))
+    }
 
     const handleDelete = async () => {
         setLoadingD(true)
@@ -237,7 +247,8 @@ const Products = () => {
                         <input
                             className="pl-8 p-1 md:h-10 md:w-60 rounded-md border-2 bg-gray-100 border-gray-200 focus:border-gray-400 focus:outline-none"
                             type="text"
-                            placeholder="Search by ID..."
+                            placeholder="Search by Title..."
+                            onChange={(e) => handleSearch(e.target.value)}
                         />
                     </div>
                     <div
@@ -268,7 +279,7 @@ const Products = () => {
                         </>
                         :
                         <>
-                            {data.map((item) => {
+                            {data2.map((item) => {
                                 return (
                                     <tr className='border-t border-b' key={item.id}>
                                         <td className='py-10 text-lg'>{item.id}</td>

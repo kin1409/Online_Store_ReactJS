@@ -1,11 +1,8 @@
-import React, { useState } from 'react'
-import Users from '../components/Users'
+import React, { useEffect, useState } from 'react'
+
 import { Link, Outlet, useLocation, } from 'react-router-dom'
 
 const Admin = () => {
-    const [isSelected, setIsSelected] = useState("Products")
-    const location = useLocation()
-
     const MENU = [
         {
             title: "Products",
@@ -21,7 +18,16 @@ const Admin = () => {
         },
 
     ]
-    console.log(MENU[0].icon)
+    const [isSelected, setIsSelected] = useState("Products")
+    useEffect(() => {
+        const pathSegments = location.pathname.split('/').filter(segment => segment);
+        const currentMenu = pathSegments[pathSegments.length - 1];
+        const selectedItem = MENU.find(item => item.title.toLowerCase() === currentMenu);
+        if (selectedItem) {
+            setIsSelected(selectedItem.title);
+        }
+    }, [location.pathname]);
+
     const handleSelected = (name) => {
         setIsSelected(name)
     }
