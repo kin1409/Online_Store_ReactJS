@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to Dev
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 20
+          node-version: 16
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
@@ -32,7 +32,7 @@ jobs:
           path: ./dist
 
   deploy:
-    name: Deploy
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/dev'
