@@ -40,6 +40,7 @@ const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { path: "/Online_Store_ReactJS/", element: <Home /> },
+      { path: "/Online_Store_ReactJS/dev", element: <Home /> },
       { path: "/Online_Store_ReactJS/men", element: <Men /> },
       { path: "/Online_Store_ReactJS/women", element: <Women /> },
       { path: "/Online_Store_ReactJS/kid", element: <Kid /> },
