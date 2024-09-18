@@ -2,7 +2,7 @@ import React from 'react'
 
 const Kid = () => {
     return (
-        <div>
+        <div className='bg'>
             kid
         </div>
     )
