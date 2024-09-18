@@ -1,9 +1,9 @@
-name: Deploy
+name: Deploy to Dev
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   build:
@@ -25,23 +25,23 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload production-ready build files
-        uses: actions/upload-artifact@v2
+      - name: Upload dev-ready build files
+        uses: actions/upload-artifact@v3
         with:
-          name: production-files
+          name: dev-files
           path: ./dist
 
   deploy:
-    name: Deploy
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/dev'
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: production-files
+          name: dev-files
           path: ./dist
 
       - name: Deploy to GitHub Pages
@@ -49,3 +49,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
+          destination_dir: dev
